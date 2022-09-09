@@ -1,0 +1,6 @@
+/.idea
+**/rawdata
+*.mov
+*.mkv
+*.mp4
+*.osp
