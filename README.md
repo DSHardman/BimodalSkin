@@ -1,7 +1,7 @@
 # Bimodal Skin
 This code accompanies the paper Sensorized Skin with Biomimetic Tactility Features based on Bimodal Soft Resistive Composites.
 
-This repository contains the data for all tests, the code used to collect this data via a _National Instruments USB-6210_ + _Universal Robots UR5_, and the code to train and test neural networks to predict tactile stimuli.
+This repository contains the data for all tests, the code used to collect this data via a _National Instruments USB-6212_ + _Universal Robots UR5_, and the code to train and test neural networks to predict tactile stimuli.
 
 Written using MATLAB 2021b (Deep Learning Toolbox) & Python 3 ([Generic UR5 Controller: kg398/Generic_ur5_controller: new version of ur5 python controller](https://github.com/kg398/Generic_ur5_controller)).
 
@@ -18,6 +18,8 @@ The circular test of Figure 6 is stored in _Responses/Patterns_Large.mat_ as a *
 
 ## Data Collection
 **RepeatsSynchronised.py**, **RandomSynchronised.py**, and **PatternsSynchronised.py** contain the python code used to collect the three datasets described above, which synchronizes data collection between a DAQ and robot arm. The thousands of raw output .npy files are not included in this repository, but are converted into the **SingleTest** MATLAB objects described above.
+
+_ProbeCode/_ contains the code uploaded to an Arduino Pro Mini controlling the probe's temperature.
 
 ## Functions
 **sensorTrain.m** creates and trains the feedforward neural networks using the given parameters, returning the trained network, the mean errors of the training, validation, and test sets, and the predictions/targets/errors of the test set. These are calculated by calling **calculateErrors.m**, and described in the function comments.
